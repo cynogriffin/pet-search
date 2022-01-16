@@ -1,0 +1,18 @@
+body {
+    background-color: #021F4B;
+}
+
+header {
+    padding: 20px 35px;
+    background-color: #021F4B;
+}
+header h1 {
+    font-weight: bold;
+    font-size: 35px;
+    margin:0;
+    color: white;
+}
+
+header a {
+    color:white;
+}
