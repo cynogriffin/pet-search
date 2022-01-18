@@ -40,11 +40,11 @@ fetch(apiURL2)
         for (let i = 1; i < 10; i++) {
             let spacecraft = data.results[i].name;
             let launchDate = data.results[i].window_start
-            let launchDatesFormated = moment.unix(data.results[i].window_start).format('dddd, MMMM Do YYYY, h:mm:ss a');
+            let launchDatesFormated = moment(data.results[i].window_start).format('dddd, MMMM Do YYYY, h:mm:ss a');
             const div = document.createElement('div');
 
            
-             let launchDateDisplay = `<h2> Spacecraft: ${spacecraft} Launch Date: ${launchDate}</h2>`
+             let launchDateDisplay = `<h2> Spacecraft: ${spacecraft} Launch Date: ${launchDatesFormated}</h2>`
             const container = document.getElementById('launch-Date');
             
             container.append(div);
