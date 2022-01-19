@@ -143,16 +143,16 @@ var addPicture = function (data) {
         .map(function (picoftheday) {
 
             return `<div class='card'>
-            <h2>Picture of the Day</h2>
+            
         <h2 class="title is-4">${picoftheday.title}</h2>
 
         <figure class="image is-3by2">
-        <img src=${picoftheday.url} />
+            <img src=${picoftheday.url} />
         </figure>
-
-        <h3 class="title is-6">${picoftheday.explanation}</h3>
-        <h4 class="title is-7">credit: ${picoftheday.copyright}</h4>
-
+        <div class="card-content">
+            <div class="content">${picoftheday.explanation}</div>
+            <div class="content">credit: ${picoftheday.copyright}</div>
+        </div
     </div>`
 
         })
