@@ -36,7 +36,7 @@ var addArticle = function (data) {
                 <div class="card-content">
                     <div class="media">    
                         <div class="media-content">
-                            <p >class="title is-4"${article.title}</p>
+                            <p class="title is-4">${article.title}</p>
                         </div>
                     </div>
                     <div class="content">${article.summary}</div>
@@ -118,7 +118,7 @@ var addPicture = function (data) {
 
             return `<div class='card'>
             <h2>Picture of the Day</h2>
-        <h2 class="title is-4">"${picoftheday.title}"</h2>
+        <h2 class="title is-4">${picoftheday.title}</h2>
 
         <figure class="image is-3by2">
         <img src=${picoftheday.url} />
