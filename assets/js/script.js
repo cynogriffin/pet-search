@@ -1,4 +1,3 @@
-
 let apiURL1 = 'https://lldev.thespacedevs.com/2.2.0/spacecraft/?limit=10&offset=10'
 let apiURL2 = 'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?hide_recent_previous=false&include_suborbital=true&is_crewed=false&limit=10&offset=10&related=false'
 let apiPictureoftheday = 'https://api.nasa.gov/planetary/apod?api_key=X9BF4XMGzgnLciHZqS1xFfjszIgdKrMIUe6DWnoC'
@@ -17,15 +16,15 @@ async function getNews() {
     addArticle(data);
 };
 
- // function to add the articles to the page from api response
-var addArticle = function(data) {
+// function to add the articles to the page from api response
+var addArticle = function (data) {
     // variable targeting the news section/div
     var section = document.querySelector("#news");
-    
+
     // targeting the HTML of news section to add data from the api response
     section.innerHTML = data
         // runs the function to add the article for each item of "data" returned from the call
-        .map(function(article) {
+        .map(function (article) {
             //adds the html content for each article with the information from the json
             return `<a href="${article.url}" target="_blank">
             <div class="card">
@@ -37,7 +36,7 @@ var addArticle = function(data) {
                 <div class="card-content">
                     <div class="media">    
                         <div class="media-content">
-                            <p class="title is-4">${article.title}</p>
+                            <p class="title is-4 card-title">${article.title}</p>
                         </div>
                     </div>
                     <div class="content">${article.summary}</div>
@@ -78,7 +77,7 @@ fetch(apiURL2)
     })
 
 
-    
+
 fetch(apiPictureoftheday)
     .then(function (response) {
         if (response.ok) {
@@ -88,18 +87,19 @@ fetch(apiPictureoftheday)
                 let explanation = data.explanation;
                 let copyright = data.copyright;
                 const div = document.createElement('div');
-               
+
 
                 let picoftheday = `<img src=${pic}>`
 
-        
+
 
                 const container = document.getElementById('picture-of-the-day');
-              container.append(div);
+                container.append(div);
 
 
-              div.innerHTML = picoftheday + explanation + copyright 
-                
+                div.innerHTML = picoftheday + explanation + copyright
+
             })
         }
     })
+

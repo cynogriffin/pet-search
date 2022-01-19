@@ -1,28 +1,31 @@
-/* * {
+/* /* * {
     margin: 0;
     padding: 0;
-}
+} */
 
 
 body {
-    color: black;
-} */
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+} 
 
 header {
     padding: 20px 35px;
-    background-color: #021F4B;
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+    
 }
 header h1 {
     font-weight: bold;
     font-size: 60px;
     /* margin:0; */
-    color: white;
+    color: black;
     /* display: inline; */
     
 }
 
 header a {
-    color:white;
+    color:black;
     float: right;
     margin-left: 30px;
 }
@@ -41,7 +44,7 @@ header nav ul li a
 }
 
 main {
-    color: white;
+    color: whitesmoke;
     font-size: 20px;
    
 
@@ -62,4 +65,16 @@ main {
 
     
 }
+
+.footer {
+    text-align: center;
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+} 
+
+.card {
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+}
+
 
