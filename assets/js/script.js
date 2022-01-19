@@ -7,7 +7,7 @@ let apiPictureoftheday = 'https://api.nasa.gov/planetary/apod?api_key=X9BF4XMGzg
 // url for api call for news
 var newsURL = "https://api.spaceflightnewsapi.net/v3/articles?_limit=5"
 
-// fetch request for the api
+// fetch request for the news api
 async function getNews() {
     var response = await fetch(newsURL);
     var data = await response.json();
@@ -16,7 +16,7 @@ async function getNews() {
     addArticle(data);
 };
 
-// function to add the articles to the page from api response
+// function to add the articles to the page from news api response
 var addArticle = function (data) {
     // variable targeting the news section/div
     var section = document.querySelector("#news");
@@ -26,23 +26,21 @@ var addArticle = function (data) {
         // runs the function to add the article for each item of "data" returned from the call
         .map(function (article) {
             //adds the html content for each article with the information from the json
-            return `<a href="${article.url}" target="_blank">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-3by2">
-                        <img src="${article.imageUrl}" />
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">    
-                        <div class="media-content">
-                            <p class="title is-4 card-title">${article.title}</p>
-                        </div>
+            return `<div class="column is-half">
+                <a href="${article.url}" target="_blank">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-3by2">
+                            <img src="${article.imageUrl}" />
+                        </figure>
                     </div>
-                    <div class="content">${article.summary}</div>
+                    <div class="card-content">
+                        <div class="title is-4">${article.title}</div>
+                        <div class="content">${article.summary}</div>
+                    </div>
                 </div>
-            </div>
-            </a>`
+                </a>
+            </div>`
         })
         // joins the created items
         .join(" ")
@@ -75,31 +73,59 @@ getNews().catch(error => {
 
 // div.innerHTML = launchDateDisplay
 
-// async function getLaunch() {
-//     var response = await fetch(apiURL2)
-//     console.log(response)
-//     var data = await response.json();
-//     console.log(data)
-//     addlaunches(data);
+// fetch request for the lauch api
+async function getLaunch() {
+    var response = await fetch(apiURL2);
+    var data = await response.json();
 
-// };
+    addlaunches(data.results);
+};
 
-// var addlaunches = function (data) {
-//     var section = document.querySelector('#launch-Date');
-//     let launchDatesFormated = moment(data.results.window_start).format('dddd, MMMM Do YYYY, h:mm a');
-//     section.innerHTML = [data]
-//         .map(function (launch) {
+// function to add the launches to the page
+var addlaunches = function (data) {
+    var section = document.querySelector('#launch-Date');
+    
+    section.innerHTML = data
+        .map(function (launch) {
+            var launchDatesFormatted = moment(launch.window_start).format('dddd, MMMM Do YYYY, h:mm a');
+            var missioninfo = launch.mission;
 
-//             return `<div class="card">
+            if(missioninfo) {
+                return `<div class="card column is-one-third">
+                <div class="card-image">
+                    <figure class="image is-3by2">
+                        <img src="${launch.image}" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="title is-4">Spacecraft Name: ${launch.name}</div>
+                    <div class="content">Launch Time: ${launchDatesFormatted}</div>
+                    <div class="content">${missioninfo.description}</div>
+                </div>
+            </div>`
+            } else {
+                return `<div class="card column is-3by2">
+                <div class="card-image">
+                    <figure class="image is-3by2">
+                        <img src="${launch.image}" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="title is-4">Spacecraft Name: ${launch.name}</div>
+                    <div class="content">Launch Time: ${launchDatesFormatted}</div>
+                    <div class="content">No description available.</div>
+                </div>
+            </div>`
+            }
 
-//         <h2>SpaceCraft Name: ${launch.results.name}</h2>
-//         <h3>"${launchDatesFormated} 'EST'</h3>    
-//         </div>`
-//         })
-//         .join(' ')
+            
+        })
+        .join(' ')
+};
 
-// }
-// getLaunch()
+getLaunch();
+
+
 
 async function getPictureOfDay() {
     var response = await fetch(apiPictureoftheday);
