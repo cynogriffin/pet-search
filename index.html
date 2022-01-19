@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Launch Tracker</title>
 
-    
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -46,14 +46,14 @@
         </main>
         
 
-        <section id="upcoming-launches">
+        <section id="upcoming-launches" class="section">
             <!-- populates upcoming space launches upon page load -->
             <div id="launch-Date">
                 <h2>Launch Schedule</h2>
             </div>
         </section>
 
-        <section>
+        <section class="section">
             <h2>Spaceflight News</h2>
             <!-- add input element here for search bar -->
             <div class="news-section" id="news">
@@ -61,19 +61,19 @@
             </div>
         </section>
 
-        <section>
+        <section class="section">
             <div>
                 <h2>View Latest Missions</h2>
             </div>
         </section>
 
-        <section>
+        <section class="section">
             <div id="spacecraftName">
                 <h2>Spacecraft</h2>
             </div>
         </section>
     
- <div id="picture-of-the-day"> 
+ <div id="picture-of-the-day" class="section"> 
 
 
  </div>
@@ -85,5 +85,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>
+
+<footer class="footer">
+    <p >
+        Fill out this form to subscibe to our monthly space launch newsletters!
+    </p>
+    <br>
+    <form>
+        <label for="name">Enter full name:</label>
+            <input type="text" placeholder="Your Name" name="name" id="name" />
+            <label for="email">Enter email address:</label>
+            <input type="email" placeholder="Email Address" email="email" id="email" />
+            <label for="phone">Enter a telephone number:</label>
+            <input type="tel" placeholder="Phone Number" phone="phone" id="phone" />
+            <button type ="submit">Submit</button>
+    </form>
+</br></br>
+    <h2> Made by Space Developers</h2>
+    © Space Launch Tracker 2022    
+</footer>
 
 </html>
