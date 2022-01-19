@@ -1,11 +1,11 @@
 
 // let apiURL1 = 'https://lldev.thespacedevs.com/2.2.0/spacecraft/?limit=10&offset=10'
-let apiURL2 = 'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?hide_recent_previous=false&include_suborbital=true&is_crewed=false&limit=10&offset=10&related=false'
+let apiURL2 = 'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?hide_recent_previous=false&include_suborbital=true&is_crewed=false&limit=12&offset=10&related=false'
 let apiPictureoftheday = 'https://api.nasa.gov/planetary/apod?api_key=X9BF4XMGzgnLciHZqS1xFfjszIgdKrMIUe6DWnoC'
 
 // second api work for spaceflight news articles
 // url for api call for news
-var newsURL = "https://api.spaceflightnewsapi.net/v3/articles?_limit=5"
+var newsURL = "https://api.spaceflightnewsapi.net/v3/articles?_limit=6"
 
 // fetch request for the news api
 async function getNews() {
@@ -51,29 +51,6 @@ getNews().catch(error => {
     console.error(error);
 });
 
-// fetch(apiURL2)
-//     .then(function (response) {
-//         if (response.ok) {
-
-//             response.json().then(function (data) {
-
-//                 for (let i = 1; i < 10; i++) {
-//                     let spacecraft = data.results[i].name;
-//                     
-
-//                     var section = document.querySelector("spacecraftName")
-//                         section.innerHTML = function(){
-
-
-// div.classList.add()
-// let launchDateDisplay = `<h2> Spacecraft: ${spacecraft} Launch Date: ${launchDatesFormated} 'EST'</h2>`
-// const container = document.getElementById('launch-Date');
-
-// container.append(div);
-
-// div.innerHTML = launchDateDisplay
-
-// fetch request for the lauch api
 async function getLaunch() {
     var response = await fetch(apiURL2);
     var data = await response.json();
@@ -87,7 +64,7 @@ var addlaunches = function (data) {
     
     section.innerHTML = data
         .map(function (launch) {
-            var launchDatesFormatted = moment(launch.window_start).format('dddd, MMMM Do YYYY, h:mm a');
+            var launchDatesFormatted = moment(launch.window_start).format('dddd, MMMM Do YYYY, h:mm a') + ' EST';
             var missioninfo = launch.mission;
 
             if(missioninfo) {
