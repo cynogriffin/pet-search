@@ -4,17 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet-Search</title>
+    <title>Space Launch Tracker</title>
 
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body class="w3-container">
+   <header class="w3-bar">
+
+   
+        <a href="#upcoming-launches" class="w3-bar-item  w3-mobile w3-right">Launch Schedule</a>
+        <a href="#spaceflight-news" class="w3-bar-item  w3-mobile w3-right">Spaceflight News</a>
+        <a href="#daily-pic" class="w3-bar-item w3-mobile w3-right">Picture of the Day</a>
+        <h1>Space Launch Tracker</h1>
+     
+       <!-- <h1>Space Launch Tracker</h1> -->
+    <!-- <nav>
+        <ul>
+            <li>
+                <a href="#upcoming-launches">Upcoming Launches</a>
+            </li>
+            <li>
+                <a href="#spaceflight-news">Spaceflight News</a>
+            </li>
+            <li>
+                <a href="#future-launches">Future Launches</a>
+            </li>
+        </ul>
+    </nav> -->
+   </header>
+
+    <main>
+        <div class="intro">
+            <h2>About Our Website</h2>
+            <p>This website is designed to inform space enthusiasts about upcoming launches, current spaceflight news, and fun facts about the great beyond.</p>
+        </div>
+    </main>
+        
+
+    <section id="upcoming-launches">
+        <!-- populates upcoming space launches upon page load -->
+        <h2>Launch Schedule</h2>
+        <div class="columns is-multiline" id="launch-Date">
+            
+        </div>
+    </section>
+
+    <section id="spaceflight-news">
+        <h2>Spaceflight News</h2>
+        <!-- add input element here for search bar -->
+        <div class="news-section columns is-multiline" id="news">
+            <!-- populate news articles here -->
+        </div>
+    
+    <section id="daily-pic">
+        <div id="picture-of-the-day"> 
+
+
+        </div>
+    </section>
+    
+ 
+
    
     
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>
+
+<footer class="footer">
+    <p >
+        Fill out this form to subscibe to our monthly space launch newsletters!
+    </p>
+    <br>
+    <form>
+        <label for="name">Enter full name:</label>
+            <input type="text" placeholder="Your Name" name="name" id="name" />
+            <label for="email">Enter email address:</label>
+            <input type="email" placeholder="Email Address" email="email" id="email" />
+            <label for="phone">Enter a telephone number:</label>
+            <input type="tel" placeholder="Phone Number" phone="phone" id="phone" />
+            <button type ="submit">Submit</button>
+    </form>
+</br></br>
+    <h2> Made by Space Developers</h2>
+    © Space Launch Tracker 2022    
+</footer>
+
 </html>
