@@ -42,7 +42,8 @@ var addArticle = function (data) {
                     </div>
                     <div class="content">${article.summary}</div>
                 </div>
-            </div>`
+            </div>
+            </a>`
         })
         // joins the created items
         .join(" ")
