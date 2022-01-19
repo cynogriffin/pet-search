@@ -43,14 +43,12 @@ header nav ul li a
 main {
     color: white;
     font-size: 20px;
-   
-
-    
+    padding: 0px;
 }
 
-/* section {
-    padding: 60px;
-} */
+section {
+    padding: 10px 0px;
+}
 
 .intro {
     background-image:url(../images/mainphoto.jpg);
@@ -63,3 +61,6 @@ main {
     
 }
 
+h2 {
+    padding: 10px 0px;
+}
