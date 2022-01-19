@@ -1,7 +1,7 @@
-let apiURL1 = 'https://lldev.thespacedevs.com/2.2.0/spacecraft/?limit=10&offset=10'
+
+// let apiURL1 = 'https://lldev.thespacedevs.com/2.2.0/spacecraft/?limit=10&offset=10'
 let apiURL2 = 'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?hide_recent_previous=false&include_suborbital=true&is_crewed=false&limit=10&offset=10&related=false'
 let apiPictureoftheday = 'https://api.nasa.gov/planetary/apod?api_key=X9BF4XMGzgnLciHZqS1xFfjszIgdKrMIUe6DWnoC'
-console.log(apiPictureoftheday)
 
 // second api work for spaceflight news articles
 // url for api call for news
@@ -53,54 +53,85 @@ getNews().catch(error => {
     console.error(error);
 });
 
-fetch(apiURL2)
-    .then(function (response) {
-        if (response.ok) {
+// fetch(apiURL2)
+//     .then(function (response) {
+//         if (response.ok) {
 
-            response.json().then(function (data) {
+//             response.json().then(function (data) {
 
-                for (let i = 1; i < 10; i++) {
-                    let spacecraft = data.results[i].name;
-                    let launchDate = data.results[i].window_start
-                    let launchDatesFormated = moment(data.results[i].window_start).format('dddd, MMMM Do YYYY, h:mm:ss a');
-                    const div = document.createElement('div');
+//                 for (let i = 1; i < 10; i++) {
+//                     let spacecraft = data.results[i].name;
+//                     
 
-
-                    let launchDateDisplay = `<h2> Spacecraft: ${spacecraft} Launch Date: ${launchDatesFormated}</h2>`
-                    const container = document.getElementById('launch-Date');
-
-                    container.append(div);
-
-                    div.innerHTML = launchDateDisplay
-                }
-            })
-        }
-    })
+//                     var section = document.querySelector("spacecraftName")
+//                         section.innerHTML = function(){
 
 
+// div.classList.add()
+// let launchDateDisplay = `<h2> Spacecraft: ${spacecraft} Launch Date: ${launchDatesFormated} 'EST'</h2>`
+// const container = document.getElementById('launch-Date');
 
-fetch(apiPictureoftheday)
-    .then(function (response) {
-        if (response.ok) {
+// container.append(div);
 
-            response.json().then(function (data) {
-                let pic = data.url;
-                let explanation = data.explanation;
-                let copyright = data.copyright;
-                const div = document.createElement('div');
+// div.innerHTML = launchDateDisplay
 
+// async function getLaunch() {
+//     var response = await fetch(apiURL2)
+//     console.log(response)
+//     var data = await response.json();
+//     console.log(data)
+//     addlaunches(data);
 
-                let picoftheday = `<img src=${pic}>`
+// };
 
+// var addlaunches = function (data) {
+//     var section = document.querySelector('#launch-Date');
+//     let launchDatesFormated = moment(data.results.window_start).format('dddd, MMMM Do YYYY, h:mm a');
+//     section.innerHTML = [data]
+//         .map(function (launch) {
 
+//             return `<div class="card">
 
-                const container = document.getElementById('picture-of-the-day');
-                container.append(div);
+//         <h2>SpaceCraft Name: ${launch.results.name}</h2>
+//         <h3>"${launchDatesFormated} 'EST'</h3>    
+//         </div>`
+//         })
+//         .join(' ')
 
+// }
+// getLaunch()
 
-                div.innerHTML = picoftheday + explanation + copyright
+async function getPictureOfDay() {
+    var response = await fetch(apiPictureoftheday);
+    var data = await response.json();
 
-            })
-        }
-    })
+    addPicture(data)
+};
+
+var addPicture = function (data) {
+
+    var section = document.querySelector('#picture-of-the-day');
+
+    section.innerHTML = [data]
+
+        .map(function (picoftheday) {
+
+            return `<div class='card'>
+            <h2>Picture of the Day</h2>
+        <h2 class="title is-4">${picoftheday.title}</h2>
+
+        <figure class="image is-3by2">
+        <img src=${picoftheday.url} />
+        </figure>
+
+        <h3 class="title is-6">${picoftheday.explanation}</h3>
+        <h4 class="title is-7">credit: ${picoftheday.copyright}</h4>
+
+    </div>`
+
+        })
+        .join(' ')
+}
+
+getPictureOfDay()
 
