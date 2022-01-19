@@ -7,27 +7,35 @@
     <title>Space Launch Tracker</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-   <header>
-       <h1>Space Launch Tracker</h1>
-    <nav>
+<body class="w3-container">
+   <header class="w3-bar">
+
+   
+        <a href="#upcoming-launches" class="w3-bar-item  w3-mobile w3-right">Upcoming Launches</a>
+        <a href="#spaceflight-news" class="w3-bar-item  w3-mobile w3-right">Spaceflight News</a>
+         <a href="#" class="w3-bar-item w3-mobile w3-right">Future Launches</a>
+        <h1>Space Launch Tracker</h1>
+     
+       <!-- <h1>Space Launch Tracker</h1> -->
+    <!-- <nav>
         <ul>
             <li>
-                <a href="#Upcoming Launches">Upcoming Launches</a>
+                <a href="#upcoming-launches">Upcoming Launches</a>
             </li>
             <li>
-                <a href="#Recent Launches">Recent Launches</a>
+                <a href="#spaceflight-news">Spaceflight News</a>
             </li>
             <li>
-                <a href="#Past Launches">Past Launches</a>
+                <a href="#future-launches">Future Launches</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
    </header>
 
-       <main>
+    <main>
         <div class="intro">
             <h2>About Our Website</h2>
             <p>This website is designed to inform space enthusiasts about upcoming, future, 
@@ -35,54 +43,45 @@
                 <br>exploration missions to deep space.  </p>
         </div>
         </main>
-
-       <section>
-        <div class="schedule">
-            <h2 >Launch Schedule</h2>
         
-        <div class="container">
 
-        </div>
-    </div>
-       </section>
+        <section id="upcoming-launches">
+            <!-- populates upcoming space launches upon page load -->
+            <div id="launch-Date">
+                <h2>Launch Schedule</h2>
+            </div>
+        </section>
 
-       <section>
-           <div>
-               <h2>Upcoming Launches</h2>
-           </div>
-       </section>
+        <section>
+            <h2>Spaceflight News</h2>
+            <!-- add input element here for search bar -->
+            <div class="news-section" id="news">
+                <!-- populate news articles here -->
+            </div>
+        </section>
 
-       <section>
-           <div>
-               <h2>Recent Launches</h2>
-           </div>
-       </section>
+        <section>
+            <div>
+                <h2>View Latest Missions</h2>
+            </div>
+        </section>
 
-       <section>
-           <div>
-               <h2>Past Launches</h2>
-           </div>
-       </section>
+        <section>
+            <div id="spacecraftName">
+                <h2>Spacecraft</h2>
+            </div>
+        </section>
+    
+ <div id="picture-of-the-day"> 
 
-       <section>
-           <div>
-               <h2>View Latest Missions</h2>
-           </div>
-       </section>
 
-       <section>
-           <div>
-               <h2>Spacecraft</h2>
-           </div>
-       </section>
-
- 
+ </div>
 
    
     
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>
 

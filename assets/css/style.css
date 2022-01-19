@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
 }
@@ -6,7 +6,7 @@
 
 body {
     color: black;
-}
+} */
 
 header {
     padding: 20px 35px;
@@ -14,28 +14,30 @@ header {
 }
 header h1 {
     font-weight: bold;
-    font-size: 35px;
-    margin:0;
+    font-size: 60px;
+    /* margin:0; */
     color: white;
-    display: inline;
+    /* display: inline; */
+    
 }
 
 header a {
     color:white;
+    float: right;
+    margin-left: 30px;
 }
 
-header nav {
-    float: right;
-    margin: 7px 0;
-}
+
 
 header nav ul li {
     display: inline;
 }
 
-header nav ul li a {
+header nav ul li a 
+
+#nav-links{
     margin: 0 30px;
-    font-size: 22px;
+    font-size: 40px;
 }
 
 main {
@@ -47,14 +49,19 @@ main {
     
 }
 
-section {
-    padding: 0;
-}
+/* section {
+    padding: 60px;
+} */
 
 .intro {
     background-image:url(../images/mainphoto.jpg);
     height: 800px;
-    width: 2000px;
+   background-size:cover ;
+ 
+    
+  
+
+    
 }
 
 .schedule {
