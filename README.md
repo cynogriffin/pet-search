@@ -12,7 +12,7 @@ AS A person interested in space
 I WANT a concise resource to view space launch info
 SO THAT I can be updated on current space launch events, news, and information.
 ```
-The live site can be viewed [here](). Please feel free to browse the site and let us know of any comments or suggestions.
+The live site can be viewed [here](https://cynogriffin.github.io/spacelaunch-tracker/). Please feel free to browse the site and let us know of any comments or suggestions.
 
 ## Installation and Usage
 
