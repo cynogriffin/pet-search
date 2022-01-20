@@ -46,18 +46,19 @@ header nav ul li a
 main {
     color: whitesmoke;
     font-size: 20px;
-    padding: 0px;
+    padding: 20px;
+
 }
 
 section {
     padding: 10px 0px;
+    
 }
 
 .intro {
     background-image:url(../images/mainphoto.jpg);
     height: 800px;
-   background-size:cover ;
- 
+   background-size:cover ; 
     
   
 
@@ -66,4 +67,23 @@ section {
 
 h2 {
     padding: 10px 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+} 
+
+.card {
+    font-size: 20px;
+    color: black;
+    background: rgb(222,194,255);
+    background: linear-gradient(90deg, rgba(222,194,255,1) 0%, rgba(206,166,253,0.6573004201680672) 17%, rgba(185,126,254,0.738532913165266) 33%, rgba(137,36,255,0.7105217086834734) 59%, rgba(0,191,255,0.8281687675070029) 93%);
+}
+
+
+
 }
