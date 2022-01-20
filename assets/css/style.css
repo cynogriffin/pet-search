@@ -85,9 +85,5 @@ h2 {
 }
 
 
-hero p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
 
 }
