@@ -22,17 +22,18 @@ To use, you can follow the steps listed below:
 
 1. To view upcoming launches, navigate to the Launch Schedule section of the page using the nav bar or scroll. The next ten upcoming global space launches will be listed with information on each mission including the mission name, description, and projected launch date/time.
 
-    ![upcoming launch information]()
+    ![upcoming launch information](https://github.com/cynogriffin/spacelaunch-tracker/blob/main/assets/images/launch.PNG)
 
 2. To browse the most recent news in space flight, navigate to the Spaceflight News section. There you will see the most recent developements in the field of spaceflight. If you are interested in an article, simply click anywhere on the card and it will open the full news article in the news site in a new browser tab. (upcoming feature to allow search news by topic)
 
-    ![space news example]()
+    ![space news example](https://github.com/cynogriffin/spacelaunch-tracker/blob/main/assets/images/news.PNG)
 
 3. For the NASA space picture of the day, navigate to the Picture of the Day section. There you can view the space picture of the day as well as read up on some factual information about the subject of the picture.
 
-    ![space picture and info]()
+    ![space picture and info](https://github.com/cynogriffin/spacelaunch-tracker/blob/main/assets/images/potd.PNG)
 
 4. Lastly, if you would like to get in touch with us, please provide us with your name and email address in the form at the bottom of the page.
+    ![contact form](https://github.com/cynogriffin/spacelaunch-tracker/blob/main/assets/images/contact.PNG)
 
 ## Credits
 
