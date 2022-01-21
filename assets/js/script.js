@@ -3,6 +3,7 @@
 let apiURL2 = 'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?hide_recent_previous=false&include_suborbital=true&is_crewed=false&limit=12&offset=10&related=false'
 let apiPictureoftheday = 'https://api.nasa.gov/planetary/apod?api_key=X9BF4XMGzgnLciHZqS1xFfjszIgdKrMIUe6DWnoC'
 
+
 // second api work for spaceflight news articles
 // url for api call for news
 var newsURL = "https://api.spaceflightnewsapi.net/v3/articles?_limit=6"
@@ -136,5 +137,33 @@ var addPicture = function (data) {
         .join(' ')
 }
 
-getPictureOfDay()
+getPictureOfDay();
 
+
+//Local storage variables
+var NameInput = document.querySelector("#name");
+var emailInput = document.querySelector("#email");
+var phoneInput = document.querySelector("#phone");
+var submitButton = document.querySelector("#news-letter-submit");
+ 
+
+// localStorage function
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+// object for form submission
+    let signUpValue = {
+        Name: NameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: phoneInput.value.trim()
+    }
+      
+    // set new submission to local storage 
+    localStorage.setItem("newsLetterSignUp", JSON.stringify(signUpValue));
+
+    //this clears out boxes after submit
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+
+});
